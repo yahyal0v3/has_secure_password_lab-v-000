@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-      raise @user.inspect
+      raise @user.errors.inspect
     if @user
       session[:user_id] = @user.id
       redirect_to users_path
