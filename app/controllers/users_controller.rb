@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user && @user.authenticate(params[:password])
+      raise params.inspect
       session[:user_id] = @user.id
       redirect_to users_path
     else
