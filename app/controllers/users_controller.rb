@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    raise @user.errors.empty?.inspect
     if @user.errors.empty?
       session[:user_id] = @user.id
       redirect_to users_path
