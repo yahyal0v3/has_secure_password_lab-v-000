@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     if params[:name].blank?
-
+      redirect_to new_user_path
     else
       @user = User.create(user_params)
       redirect_to new_session_path
