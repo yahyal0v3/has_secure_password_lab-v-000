@@ -11,9 +11,6 @@ class UsersController < ApplicationController
       raise params.inspect
       session[:user_id] = @user.id
       redirect_to users_path
-    else
-      redirect_to new_user_path
-    end
   end
 
   private
